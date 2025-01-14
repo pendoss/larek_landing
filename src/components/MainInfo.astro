@@ -1,0 +1,133 @@
+---
+const cssVars = {
+    primaryColor: '#2563EB',
+    secondaryColor: '#F3F4F6',
+    textColor: 'white'
+}
+const smallBoxes = [
+    {
+        title: 'Много устройств',
+        img: '/Vector-1.png'
+    },
+    {
+        title: 'Высокая скорость',
+        img: '/Vector.png'
+    }
+]
+const bigBoxes = [
+    {
+        title: 'Почему larek.vpn?'
+    },
+    {
+        title: 'larek.vpn — это быстрый, надёжный и доступный VPN-сервис, который защищает вашу конфиденциальность и обеспечивает стабильное соединение по цене, значительно ниже, чем у конкурентов. '
+    },
+    {
+        title: 'Для подключения'
+    }
+]
+---
+
+<div class="main-info">
+    <div class="bigbox">
+        <p class="bigQuestion">{bigBoxes[0].title}</p>
+    </div>
+    <div class="smallboxes-container">
+        <div class="smallbox">
+            <p>{smallBoxes[0].title}</p>
+            <img src={smallBoxes[0].img} alt="more-devices" />
+        </div>
+        <div class="smallbox">
+            <p>{smallBoxes[1].title}</p>
+            <img src={smallBoxes[1].img} alt="fast" />
+        </div>
+    </div>
+    <div class="bigbox">
+        <p>{bigBoxes[1].title}</p>
+    </div>
+    <div class="bigbox">
+        <p>{bigBoxes[2].title}</p>
+        <div class="image-container">
+            <img src="outline_app.png">
+            <img src="vless.webp">
+        </div>
+    </div>
+</div>
+
+<style define:vars={cssVars}>
+    .smallbox,.bigbox p {
+        color: white;
+        font-family: 'Helvetica';
+        font-weight: regular;
+        font-size: 20px;
+    }
+
+    .main-info {
+        background-color: white;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1000px;
+        margin: 0 auto 5rem auto;
+        border-radius: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .main-info {
+            grid-template-columns: 1fr;
+            padding: 1rem;
+            margin: 0 1rem 3rem 1rem;
+        }
+        .smallboxes-container,
+        .smallbox {
+            display: none !important;
+        }
+    }
+
+    .smallboxes-container {
+        display: flex; 
+        gap: 1rem;
+        width: 100%; 
+    }
+
+    .smallbox {
+    flex: 1;
+    background-color: var(--primaryColor);
+    padding: 0rem;
+    border-radius: 1rem;
+    min-width: 14.625rem;
+    min-height: 13.375rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    }
+
+    .bigbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 2rem;
+        min-height: 214px;
+        background-color: var(--primaryColor);
+        border-radius: 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+        
+    .bigbox img {
+        width: 5rem;
+        height: 5rem;
+        object-fit: contain;
+    }
+
+    .bigbox .bigQuestion{
+        font-family: 'Courier New', monospace;
+        font-size: 36px;
+        font-weight: regular;
+        padding: 3.34375rem 0;
+        text-align: center;
+    }
+</style>

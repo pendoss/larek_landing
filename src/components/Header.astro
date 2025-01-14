@@ -1,0 +1,89 @@
+---
+const title = "larek.tech"
+---
+
+<header>
+    <div class="logo">
+        <a href="https://larek.tech">{title}</a>
+    </div>
+    
+    <nav>
+        <a href="https://larek.tech">О нас</a>
+        <a href="/">Цены</a>
+        <!-- <a href="/blog">Войти</a> -->
+        <a href="http://l.larek.tech/vpn" class="btn">Попробовать</a>
+    </nav>
+</header>
+
+<style>
+    
+    .logo a {
+        color: #2563EB;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: bold;
+        font-size: 24px;
+        margin: 0;
+        text-decoration: none;
+    }
+    header {
+        background-color: #ffffff;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom:#E5E5E5;
+    }
+
+    nav {
+        font-family: 'JetBrains Mono', monospace;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        font-size: 14px;
+
+    }
+
+    nav a.btn {
+        
+        background-color: #2563EB;
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 14px;
+
+    }
+
+    nav a {
+        color: #2563EB;
+        text-decoration: none;
+    }
+
+    nav a:hover {
+        text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+        header {
+            flex-direction: row; /* Keep horizontal layout */
+        }
+        
+        nav {
+            gap: 1rem;
+        }
+
+        nav a.btn {
+            display: none; /* Hide the "Попробовать" button */
+        }
+
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        nav a {
+            font-size: 0.9rem; /* Slightly smaller font for mobile */
+        }
+    }
+</style>

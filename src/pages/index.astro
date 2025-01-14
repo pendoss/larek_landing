@@ -1,7 +1,26 @@
 ---
-
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import MainInfo from "../components/MainInfo.astro";
 ---
+<style>
+	body {
+		background-image: url(/bg_img.svg);
+		background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 100vh;
+        margin: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+	}
 
+    @media (max-width: 768px) {
+        body {
+            background-position: top center;
+        }
+    }
+</style>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -11,6 +30,9 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header />
+		<Hero />
+		<MainInfo />
+		<Footer />
 	</body>
 </html>
